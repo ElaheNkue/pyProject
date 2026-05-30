@@ -1,0 +1,46 @@
+
+class Library:
+
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, title, author):
+        book = {
+            "title": title,
+            "author": author
+        }
+
+        self.books.append(book)
+        print(f" {title} Added!")
+
+    def remove_book(self, title):
+
+        for book in self.books:
+            if book["title"] == title:
+                self.books.remove(book)
+                print(f" {title} Deleted!")
+                return
+
+        print(" Not founded to delete!")
+
+    def search_book(self, title):
+
+        for book in self.books:
+            if book["title"] == title:
+                print("Founded!:")
+                print(f"Title: {book['title']}")
+                print(f"Author: {book['author']}")
+            else :
+                print(" Not found!!")
+        
+
+    def show_books(self):
+
+        if not self.books:
+            print(" There is no book here.")
+            return
+
+        print("\nBook List:")
+
+        for book in self.books:
+            print(f"{book['title']} - {book['author']}")
